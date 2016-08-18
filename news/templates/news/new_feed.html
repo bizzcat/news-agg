@@ -4,24 +4,19 @@
 
 <div class="jumbotron">
   <div class="container">
-    <h1>Aricles List</h1>
-    <!-- <p>To satiate your AI wonderment.</p> -->
+    <h1>New Feed</h1>
+    <p>To satiate your AI wonderment.</p>
     <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>
   </div>
 </div>
 
 <div class="container">
-  {% for row in rows %}
-    <div class="row">
-      {% for article in row %}
-        <div class="col-md-4">
-          <h2><a href="{{ article.url }}" target="_blank">{{ article.title }}</a></h2>
-          <p> {{ article.description | safe}} </p>
-          <!-- <p><a class="btn btn-primary" href="{{ article.url }}" target="_blank" role="button">View details &raquo;</a></p> -->
-        </div>
-      {% endfor %}
-    </div>
-  {% endfor %}
+  <form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <hr>
+    <button type="submit" class="btn btn-primary">Save</button>
+  </form>
 </div>
 
 <div class="container">

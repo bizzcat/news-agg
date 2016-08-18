@@ -4,24 +4,24 @@
 
 <div class="jumbotron">
   <div class="container">
-    <h1>Aricles List</h1>
-    <!-- <p>To satiate your AI wonderment.</p> -->
+    <h1>Feeds List</h1>
+    <p>To satiate your AI wonderment.</p>
     <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>
   </div>
 </div>
 
 <div class="container">
-  {% for row in rows %}
-    <div class="row">
-      {% for article in row %}
-        <div class="col-md-4">
-          <h2><a href="{{ article.url }}" target="_blank">{{ article.title }}</a></h2>
-          <p> {{ article.description | safe}} </p>
-          <!-- <p><a class="btn btn-primary" href="{{ article.url }}" target="_blank" role="button">View details &raquo;</a></p> -->
-        </div>
-      {% endfor %}
-    </div>
-  {% endfor %}
+  <a href="{% url 'feed_new' %}" class="btn btn-primary">New Feed</a>
+  <hr>
+
+  <div class="row">
+    {% for feed in feeds %}
+      <div class="col-md-4">
+        <h2><a href="{{ feed.url }}">{{ feed.title }}</a></h2>
+        <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+      </div>
+    {% endfor %}
+  </div>
 </div>
 
 <div class="container">
