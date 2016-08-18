@@ -27,18 +27,34 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+# added for user authentication functionality, using instruction:
+# http://docs.django-userena.org/en/latest/installation.html
+
+ANONYMOUS_USER_ID = -1 # from https://pythonhosted.org/django-guardian/configuration.html
+
+AUTHENTICATION_BACKENDS = (
+    'userena.backends.UserenaAuthenticationBackend',
+    'guardian.backends.ObjectPermissionBackend',
+    'django.contrib.auth.backends.ModelBackend',
+)
+
+SITE_ID = 1
 
 # Application definition
 
 INSTALLED_APPS = [
     'news',
     'newsAgg',
+    'userena',
+    'guardian',
+    'easy_thumbnails',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
 ]
 
 MIDDLEWARE = [
