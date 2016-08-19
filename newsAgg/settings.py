@@ -38,6 +38,14 @@ AUTHENTICATION_BACKENDS = (
     'django.contrib.auth.backends.ModelBackend',
 )
 
+AUTH_PROFILE_MODULE = 'accounts.MyProfile'
+
+USERENA_SIGNIN_REDIRECT_URL = '/accounts/%(username)s/'
+LOGIN_URL = '/accounts/signin/'
+LOGOUT_URL = '/accounts/signout/'
+
+EMAIL_BACKEND = 'django.core.mail.backends.dummy.EmailBackend'
+
 SITE_ID = 1
 
 # Application definition
@@ -45,7 +53,7 @@ SITE_ID = 1
 INSTALLED_APPS = [
     'news',
     'newsAgg',
-    # 'userena',
+    'userena',
     'accounts',
     'guardian',
     'easy_thumbnails',
