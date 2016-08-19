@@ -45,7 +45,8 @@ SITE_ID = 1
 INSTALLED_APPS = [
     'news',
     'newsAgg',
-    'userena',
+    # 'userena',
+    'accounts',
     'guardian',
     'easy_thumbnails',
     'django.contrib.admin',
