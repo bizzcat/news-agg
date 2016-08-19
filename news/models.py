@@ -15,8 +15,9 @@ class Article(models.Model):
     feed = models.ForeignKey(Feed)
     title = models.CharField(max_length=200)
     url = models.URLField()
-    description = models.TextField()
+    description = models.TextField(max_length=200)
     publication_date = models.DateTimeField()
+    thumbnail_url = models.URLField(default='http://pbs.twimg.com/profile_images/555400719478444032/ky9g4wh6.png')
 
     def __str__(self):
         return self.title

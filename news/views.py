@@ -45,6 +45,9 @@ def new_feed(request):
                     article.url = entry.link
                     article.description = entry.description
 
+                    if 'media_thumbnail' in entry:
+                        article.thumbnail_url = entry.media_thumbnail[0]['url']
+
                     d = datetime.datetime(*(entry.published_parsed[0:6]))
                     dateString = d.strftime('%Y-%m-%d %H:%M:%S')
 
@@ -53,7 +56,7 @@ def new_feed(request):
                     article.save()
 
                 return redirect(feeds_list)
-                
+
     else:
         form = FeedForm()
     return render(request, 'news/new_feed.html', {'form': form})
