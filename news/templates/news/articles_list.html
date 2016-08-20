@@ -1,4 +1,4 @@
-{% extends 'news/base.html' %}
+{% extends 'news/news_base.html' %}
 
 {% block content %}
 
@@ -18,7 +18,7 @@
         <div class="col-md-4">
           <h4><a href="{{ article.url }}" target="_blank">{{ article.title }}</a></h4>
 
-          <p> <a href="{{ article.url }}" target="_blank"><img src="{{ article.thumbnail_url }}" class="image-thumbnail" /></a> {{ article.description | safe}} </p>
+          <p> <a href="{{ article.url }}" target="_blank" class="thumbnail-container"><img src="{{ article.thumbnail_url }}" class="image-thumbnail" /></a> {{ article.description | safe}} </p>
           <!-- <p><a class="btn btn-primary" href="{{ article.url }}" target="_blank" role="button">View details &raquo;</a></p> -->
         </div>
       {% endfor %}

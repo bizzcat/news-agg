@@ -48,6 +48,9 @@ def new_feed(request):
                     if 'media_thumbnail' in entry:
                         article.thumbnail_url = entry.media_thumbnail[0]['url']
 
+                    if 'media_content' in entry:
+                        article.thumbnail_url = entry.media_content[0]['url']
+
                     d = datetime.datetime(*(entry.published_parsed[0:6]))
                     dateString = d.strftime('%Y-%m-%d %H:%M:%S')
 
