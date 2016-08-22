@@ -53,7 +53,7 @@ def new_feed(request):
                     article.save()
 
                 return redirect(feeds_list)
-                
+
     else:
         form = FeedForm()
     return render(request, 'news/new_feed.html', {'form': form})
