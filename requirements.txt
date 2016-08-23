@@ -1,0 +1,11 @@
+dj-database-url==0.4.1
+Django==1.10
+django-guardian==1.4.1
+django-userena==2.0.1
+easy-thumbnails==2.3
+feedparser==5.2.1
+gunicorn==19.6.0
+html2text==2014.12.29
+Pillow==3.3.1
+six==1.10.0
+whitenoise==3.2.1

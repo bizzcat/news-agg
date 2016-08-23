@@ -1,0 +1,22 @@
+
+.image-thumbnail {
+  width: 80px;
+  height: 80px;
+  float: left;
+  padding: 5px;
+  padding-bottom: 1px;
+  padding-left: 0px;
+}
+
+.thumbnail-container {
+
+}
+
+.row {
+
+
+}
+
+.col-md-4 {
+  display: inline-block;
+}
