@@ -72,7 +72,7 @@ INSTALLED_APPS = [
     'easy_thumbnails',
     'django.contrib.admin',
     'django.contrib.auth',
-    'django.contrib.sites',
+    # 'django.contrib.sites',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
@@ -178,6 +178,6 @@ conn = psycopg2.connect(
     port=url.port
 )
 
-MIGRATION_MODULES = {
-    'sites': 'contrib.sites.migrations'
-}
+# MIGRATION_MODULES = {
+#     'sites': 'contrib.sites.migrations'
+# }
