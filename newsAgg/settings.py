@@ -60,7 +60,7 @@ ALLOWED_HOSTS = []
 #
 # EMAIL_BACKEND = 'django.core.mail.backends.dummy.EmailBackend'
 #
-# SITE_ID = 1
+SITE_ID = 1
 
 # Application definition
 
@@ -178,3 +178,7 @@ conn = psycopg2.connect(
     host=url.hostname,
     port=url.port
 )
+
+MIGRATION_MODULES = {
+    'sites': 'contrib.sites.migrations'
+}
