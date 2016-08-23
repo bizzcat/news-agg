@@ -48,32 +48,32 @@ ALLOWED_HOSTS = []
 # added for user authentication functionality, using instruction:
 # http://docs.django-userena.org/en/latest/installation.html
 
-ANONYMOUS_USER_ID = -1 # from https://pythonhosted.org/django-guardian/configuration.html
-
-AUTHENTICATION_BACKENDS = (
-    'userena.backends.UserenaAuthenticationBackend',
-    'guardian.backends.ObjectPermissionBackend',
-    'django.contrib.auth.backends.ModelBackend',
-)
-
-AUTH_PROFILE_MODULE = 'accounts.MyProfile'
-
-USERENA_SIGNIN_REDIRECT_URL = '/accounts/%(username)s/'
-LOGIN_URL = '/accounts/signin/'
-LOGOUT_URL = '/accounts/signout/'
-
-EMAIL_BACKEND = 'django.core.mail.backends.dummy.EmailBackend'
-
-SITE_ID = 1
+# ANONYMOUS_USER_ID = -1 # from https://pythonhosted.org/django-guardian/configuration.html
+#
+# AUTHENTICATION_BACKENDS = (
+#     'userena.backends.UserenaAuthenticationBackend',
+#     'guardian.backends.ObjectPermissionBackend',
+#     'django.contrib.auth.backends.ModelBackend',
+# )
+#
+# AUTH_PROFILE_MODULE = 'accounts.MyProfile'
+#
+# USERENA_SIGNIN_REDIRECT_URL = '/accounts/%(username)s/'
+# LOGIN_URL = '/accounts/signin/'
+# LOGOUT_URL = '/accounts/signout/'
+#
+# EMAIL_BACKEND = 'django.core.mail.backends.dummy.EmailBackend'
+#
+# SITE_ID = 1
 
 # Application definition
 
 INSTALLED_APPS = [
     'news',
     'newsAgg',
-    'userena',
-    'accounts',
-    'guardian',
+    # 'userena',
+    # 'accounts',
+    # 'guardian',
     'easy_thumbnails',
     'django.contrib.admin',
     'django.contrib.auth',
