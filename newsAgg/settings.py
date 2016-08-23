@@ -14,7 +14,7 @@ import os
 
 
 # For Heroku Deployment
-
+SITE_ID = 1
 
 PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
@@ -37,7 +37,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 's@2!lcaw7a(cykdavh470m04@rua7fbt#l@2#pu#8u1v+##vnk'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = []
 
@@ -60,7 +60,6 @@ ALLOWED_HOSTS = []
 #
 # EMAIL_BACKEND = 'django.core.mail.backends.dummy.EmailBackend'
 #
-SITE_ID = 1
 
 # Application definition
 
@@ -73,11 +72,11 @@ INSTALLED_APPS = [
     'easy_thumbnails',
     'django.contrib.admin',
     'django.contrib.auth',
+    'django.contrib.sites',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'django.contrib.sites',
 ]
 
 MIDDLEWARE = [
