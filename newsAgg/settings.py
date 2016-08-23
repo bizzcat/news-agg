@@ -72,7 +72,7 @@ INSTALLED_APPS = [
     'easy_thumbnails',
     'django.contrib.admin',
     'django.contrib.auth',
-    # 'django.contrib.sites',
+    'django.contrib.sites',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
@@ -160,9 +160,11 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 
+
+
 import dj_database_url
-db_from_env = dj_database_url.config(conn_max_age=500)
-DATABASES['default'].update(db_from_env)
+DATABASES['default'] =  dj_database_url.config()
+
 
 import psycopg2
 import urllib.parse as urlparse
