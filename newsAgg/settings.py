@@ -161,16 +161,13 @@ STATIC_URL = '/static/'
 
 
 
-
-import dj_database_url
-DATABASES['default'] =  dj_database_url.config()
-
+os.environ['DATABASE_URL'] = "postgres://ebrqlxfalokvaz:-AVrqk21kGW79qfwMEH-Y-MYod@ec2-54-225-89-110.compute-1.amazonaws.com:5432/d4eag285s6o7a2"
 
 import psycopg2
 import urllib.parse as urlparse
-
 urlparse.uses_netloc.append("postgres")
 url = urlparse.urlparse(os.environ["DATABASE_URL"])
+
 
 conn = psycopg2.connect(
     database=url.path[1:],
@@ -183,3 +180,8 @@ conn = psycopg2.connect(
 # MIGRATION_MODULES = {
 #     'sites': 'contrib.sites.migrations'
 # }
+
+
+import dj_database_url
+DATABASES['default'] = dj_database_url.config()
+print("DATABASES" + str(dj_database_url.config()))
